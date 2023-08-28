@@ -3,6 +3,7 @@ Alpine Docker Container with Nginx and Maxmind Geography/Country Blocking
 
 Make the changes to the config files and download the Maxmind database.
 
+```
 docker build \\
 	-t loadbalancer:<TAG> -f Dockerfile .
 
@@ -24,3 +25,4 @@ docker service create --name loadbalancer-prod --network frontend --replicas 1 \
     --mount type=volume,source=sy-currency-icons-assetroot-prod,dst=/srv/static-assets \\
     --publish 80:80 \\
     loadbalancer-prod:<TAG>
+```
