@@ -7,7 +7,8 @@ Make the changes to the config files and download the Maxmind database.
 docker build \
 	-t loadbalancer:<TAG> -f Dockerfile .
 
-docker run -it --rm --entrypoint=/bin/sh \
+#docker run -it --rm --entrypoint=/bin/sh \ #replace the first line for testing
+docker run -d \
     --mount type=bind,src=/home/adminuser/testblock/deploy/stage2/nginx.conf,dst=/etc/nginx/nginx.conf \
     --mount type=bind,src=/home/adminuser/testblock/deploy/stage2/GeoIP.conf,dst=/etc/nginx/http.d/GeoIP.conf \
     --mount type=bind,src=/home/adminuser/testblock/deploy/stage2/GeoLite2-Country.mmdb,dst=/var/lib/nginx/http.d/GeoLite2-Country.mmdb \
