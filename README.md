@@ -26,5 +26,5 @@ docker service create --name loadbalancer-prod --network frontend --replicas 1 \
     --mount type=bind,source=/home/gitlab-runner/deploy/prod/loadbalancer/http.d/GeoLite2-Country.mmdb,destination=/var/lib/nginx/http.d/GeoLite2-Country.mmdb \
     --mount type=volume,source=sy-currency-icons-assetroot-prod,dst=/srv/static-assets \
     --publish 80:80 \
-    loadbalancer-prod:<TAG>
+    loadbalancer:<TAG>
 ```
